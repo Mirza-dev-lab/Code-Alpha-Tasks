@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>DecodeLabs · Intern Portfolio</title>
+  <!-- external CSS: DRY, BEM, no inline styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- AVIF/WebP assets with explicit dimensions (simulated) -->
+</head>
+<body>
+  <!-- header semantic -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <div class="logo">
+        <span class="logo__mark">DL</span>
+        <span class="logo__text">decode<span class="logo__labs">labs</span></span>
+      </div>
+      <!-- responsive navigation (popover API / hamburger) -->
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__hamburger"></span>
+          <span class="nav__hamburger"></span>
+          <span class="nav__hamburger"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul class="nav__menu" id="navMenu" role="list">
+          <li class="nav__item"><a href="#home" class="nav__link is-active">Home</a></li>
+          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <!-- HOME / HERO section -->
+    <section id="home" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title">Frontend <br>Architect <span class="hero__accent">in training</span></h1>
+          <p class="hero__sub">Batch 2026 · DecodeLabs</p>
+          <p class="hero__desc">Static · Responsive · Interactive — mastering the IPO loop, semantic integrity, and fluid architectures.</p>
+          <a href="#projects" class="button button--primary hero__cta">View my work</a>
+        </div>
+        <div class="hero__media">
+          <!-- profile image with explicit width/height to prevent CLS -->
+          <img src="IMG_5933.png"
+               width="400" height="400"
+               class="hero__img">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (grid + flex) -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section__title">Projects <span class="section__badge">3 milestones</span></h2>
+        <div class="projects__grid">
+          <article class="project-card">
+            <div class="project-card__icon">📐</div>
+            <h3 class="project-card__title">Static Webpage</h3>
+            <p class="project-card__desc">Semantic HTML, BEM, DRY CSS, W3C valid, pixel-perfect layout.</p>
+            <span class="project-card__tag">structural</span>
+          </article>
+          <article class="project-card">
+            <div class="project-card__icon">💧</div>
+            <h3 class="project-card__title">Responsive Layout</h3>
+            <p class="project-card__desc">Mobile-first, media queries, fluid typography, flex+grid harmony.</p>
+            <span class="project-card__tag">fluidity</span>
+          </article>
+          <article class="project-card">
+            <div class="project-card__icon">⚡</div>
+            <h3 class="project-card__title">Interactive Elements</h3>
+            <p class="project-card__desc">DOM manipulation, event listeners, dark mode, state management.</p>
+            <span class="project-card__tag">engagement</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (flex component) -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section__title">Toolkit <span class="section__badge">engineering</span></h2>
+        <ul class="skills__list" role="list">
+          <li class="skills__item">HTML5 semantic</li>
+          <li class="skills__item">CSS (Grid + Flexbox)</li>
+          <li class="skills__item">JavaScript (DOM)</li>
+          <li class="skills__item">BEM methodology</li>
+          <li class="skills__item">A11y / WAI-ARIA</li>
+          <li class="skills__item">clamp() · fluid type</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container about__grid">
+        <div class="about__text">
+          <h2 class="section__title">About <span class="section__badge">intern</span></h2>
+          <p>Frontend developer in the making, driven by the IPO model: Input → Process → Output. I build with semantic integrity, responsive fluidity, and interactive precision. Every component is a learning opportunity.</p>
+          <p>DecodeLabs · batch 2026 </p>
+          <button id="themeToggle" class="button button--outline js-theme-toggle" aria-label="Toggle dark mode">🌓 Dark mode</button>
+        </div>
+        <!-- picture with explicit dimensions -->
+        <div class="about__media">
+          <img src="IMG_5933.png"
+               width="320" height="320"
+               loading="lazy"
+               class="about__img">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (with contact info) -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section__title">Contact <span class="section__badge">let's connect</span></h2>
+        <div class="contact__card">
+          <div class="contact__item"><span class="contact__label">📧</span> farhanfarooq882@gmail.com</div>
+          <div class="contact__item"><span class="contact__label">📞</span> +92 304 8649178</div>
+          <div class="contact__item"><span class="contact__label">🌐</span> <a target="_blank" href="https://www.linkedin.com/in/muhammad-farhan-farooq-31037a415/">Linked In</a></div>
+          <div class="contact__item"><span class="contact__label">📍</span> Punjab, Pakistan</div>
+        </div>
+        <!-- dynamic demo: interactive element (state) -->
+        <div class="contact__demo">
+          <p class="contact__demo-text" id="demoMessage">Click the button to update me ✨</p>
+          <button id="interactBtn" class="button button--secondary js-interact">Update message</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer semantic -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2026 M Farhan Farooq · Frontend Developer</p>
+      <p class="footer__quote">Designing static foundations · Building responsive architectures · Engineering interactive experiences</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript: external, decoupled (js- prefix) -->
+  <script src="script.js"></script>
+</body>
+</html>
